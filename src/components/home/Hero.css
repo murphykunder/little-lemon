@@ -1,0 +1,95 @@
+.hero-container {
+    display: none;;
+}
+
+.hero-container-sm {
+    background-color: #495e57;
+    position: relative;
+}
+
+.hero-container-sm .hero-text{
+    position:absolute;
+    top: 0;
+    background-color: rgb(73,94,87, 0.8);
+    padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.hero-container-sm .hero-text h1 {
+    color: rgb(244,206,20);
+    font-family: 'Markazi';
+    font-size: 4rem;
+    margin: 0;
+}
+
+.hero-container-sm .hero-text h6 {
+    color: #fff;
+    font-family: 'Markazi';
+    font-size: 2rem;
+    margin:0;
+    line-height: 0;
+}
+
+.hero-container-sm .hero-text p {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.hero-container-sm .hero-text button {
+    background-color: #f4ce14;
+    border: none;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 3px 5px #333;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .hero-container-sm {
+        display: none;
+    }
+
+    .hero-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        background-color: #495e57;
+    }
+
+    .hero-container .hero-text {
+        padding: 0 5rem;
+    }
+
+    .hero-container .hero-text h1 {
+        color: rgb(244,206,20);
+        font-family: 'Markazi';
+        font-size: 10rem;
+        padding-top: 3rem;
+    }
+
+    .hero-container .hero-text h6 {
+        color: #fff;
+        font-family: 'Markazi';
+        font-size: 6rem;
+        line-height: 0;
+    }
+
+    .hero-container .hero-text p {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-top: 4rem;
+        padding: 2rem 15rem 0 0;
+    }
+
+    .hero-container .hero-text button {
+        background-color: #f4ce14;
+        border: none;
+        border-radius: 16px;
+        font-weight: 700;
+        box-shadow: 0 3px 5px #333;
+        font-size: 1.5rem;
+        padding: 0.2rem 0.8rem;
+        margin: 1rem 0 0 0;
+    }
+}

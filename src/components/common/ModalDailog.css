@@ -1,0 +1,24 @@
+#modalCloseButton {
+    background-color: #f4ce14;
+    font-weight: 700;
+    width: 100%;
+    font-size: 0.7rem;
+}
+
+.modal-message {
+    padding: 0;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+
+    #modalCloseButton {
+        font-size: 0.9rem;
+    }
+
+    .modal-message {
+        font-size: 0.9rem;
+    }
+
+}

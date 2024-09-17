@@ -1,0 +1,110 @@
+.reserve-table-form{
+    background-color: #495e57;
+    width: 70vw;
+    margin: 3rem auto;
+    padding: 2rem;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.reserve-table-form > h6 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.reserve-table-form label {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.reserve-table-form input,
+.reserve-table-form select {
+    font-size: 0.7rem;
+}
+
+.reserve-table-form .form-group {
+    margin-bottom: 0.8rem;
+}
+
+.reserve-table-button-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20%;
+    margin-top: 1.5rem;
+}
+
+.reserve-table-form button {
+    background-color: #f4ce14;
+    border-radius: 16px;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.reserve-table-form button:hover {
+    color: #fff;
+}
+
+.reserve-table-form .date-time-form-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.reserve-table-form-error {
+    color: red;
+    font-size: 0.6rem;
+    font-weight: 400;
+    margin: 0.2rem 0 0 0;
+}
+
+label[required]::after {
+    content: '  *';
+}
+
+@media only screen and (min-width: 768px) {
+
+    .reserve-table-form{
+        width: 45vw;
+        padding: 3rem 6rem;
+    }
+
+    .reserve-table-form .date-time-form-group {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 10%;
+    }
+
+    .reserve-table-form > h6 {
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+    }
+
+    .reserve-table-form label {
+        font-size: 0.9rem;
+    }
+
+    .reserve-table-form input,
+    .reserve-table-form select {
+        font-size: 0.9rem;
+    }
+
+    .reserve-table-form .form-group {
+        margin-bottom: 2rem;
+    }
+
+    .reserve-table-button-group {
+        margin-top: 3rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 20%;
+    }
+
+    .reserve-table-form-error {
+        font-size: 0.8rem;
+    }
+
+}

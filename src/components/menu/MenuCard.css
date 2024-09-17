@@ -1,0 +1,84 @@
+.menu-card {
+    background-color: #fbdabb;
+    position: relative;
+    width: 80vw;
+    margin: 2rem auto;
+    border-radius: 5px;
+    padding: 0.8rem;
+}
+
+.menu-card > .tab-content {
+    border-radius: inherit;
+    border: 1px dashed #333;
+    background-color: #fff;
+}
+
+.menu-card-section {
+    margin-bottom: 3%;
+}
+
+.menu-card-section > h6 {
+    font-size: 0.8rem;
+    border-bottom: 1px dashed #333;
+    font-weight: 700;
+    padding: 0.2rem 0;
+}
+
+.menu-card-section-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 0.8rem;
+}
+
+.menu-card-section-item{
+    padding: 0.2rem 0.5rem;
+}
+
+.menu-card-section-item > hgroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.menu-card-section-item > hgroup > h6 {
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+
+.menu-card-section-item > p {
+    text-align: left;
+    font-size: 0.5rem;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .menu-card {
+        width: 50vw;
+        padding: 1.5rem;
+    }
+
+    .menu-card-section > h6 {
+        font-size: 0.9rem;
+        padding: 0.3rem 0;
+    }
+
+    .menu-card-section-content{
+        padding: 0 1rem;
+    }
+
+    .menu-card-section-item{
+        padding: 0.5rem 2rem;
+    }
+
+    .menu-card-section-item > hgroup > h6 {
+        font-size: 0.8rem;
+    }
+
+    .menu-card-section-item > p {
+        font-size: 0.7rem;
+    }
+
+}

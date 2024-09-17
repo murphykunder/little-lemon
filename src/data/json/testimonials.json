@@ -1,0 +1,19 @@
+{
+    "testimonials": [
+        {
+            "name": "Mathieu",
+            "comment": "I’ve been looking forward to trying the food at this restaurant for awhile now, and was so glad that I did! The food was so delicious and the service was really great, too!",
+			"rating": "5"
+        },
+		{
+            "name": "John",
+            "comment": "We had the Roasted Brick chicken, and the Shrimp Scampi Fusilli. The Shrimp Scampi Fusilli was the stand out. Worth a repeat visit!",
+			"rating": "4"
+		},
+		{
+            "name": "Macao",
+            "comment": "This restaurant has such a cozy and charming atmosphere! From the moment you walk in, you feel right at home. The warm lighting, rustic decor, and comfortable seating make it an ideal place for a relaxed meal.",
+			"rating": "4.5"
+		}
+    ]
+}

@@ -1,0 +1,43 @@
+.about-section > img {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.about-section {
+    align-items: center;
+    margin: 2rem ;
+}
+
+.about-body {
+    margin-top: 1rem;
+}
+.about-body > p {
+    font-size: 0.6rem;
+    font-weight: 500;
+}
+
+.about-body > h6 {
+    font-size: 3rem;
+    font-family: 'Markazi';
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .about-section {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+        gap: 5%;
+    }
+
+    .about-body > p {
+        font-size: 0.9rem;
+    }
+
+    .about-body > h6 {
+        font-size: 5rem;
+        text-align: left;
+    }
+}

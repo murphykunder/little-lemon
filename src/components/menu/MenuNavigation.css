@@ -1,0 +1,22 @@
+.menu-navigation-container {
+    margin-top: 2rem;
+}
+
+#menuTab {
+    justify-content: space-evenly;
+}
+
+.menu-navigation-link {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #333;
+    padding: 0.5em 1em;
+    border-radius: 16px;
+    text-decoration: none;
+}
+
+.menu-navigation-link:focus, .menu-navigation-link.active{
+    color: #333;
+    background-color: #f4ce14;
+    font-weight: 700;
+}

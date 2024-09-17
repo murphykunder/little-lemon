@@ -1,0 +1,33 @@
+.menu-card-section > h6 {
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-bottom: 1px dashed #333;
+    padding: 0.3rem 0;
+}
+
+.menu-card-section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    text-align: left;
+}
+
+.menu-card-section-content .card-body{
+    padding: 0.5rem;
+}
+
+.menu-card-section-content .card-title {
+    font-size: 0.6rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-card-section-content .card-text {
+    font-size: 0.4rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

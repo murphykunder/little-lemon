@@ -1,0 +1,19 @@
+{
+    "specials": [
+        {
+            "title": "Greek Salad",
+            "description": "A refreshing mix of crispy lettuce, peppers, olives, and Chicago-style feta cheese, garnished with crunchy garlic and rosemary croutons",
+			"image": "images/greek-salad.jpg"
+        },
+        {
+            "title": "Bruschetta",
+            "description": "Grilled bread smeared with garlic and seasoned with salt and olive oil, topped with chopped tomatoes and basil",
+			"image": "images/bruschetta.jpg"
+        },
+        {
+            "title": "Lemon Dessert",
+            "description": "A decadent, lemon-flavored treat that is a perfect end to any meal",
+			"image": "images/lemon_dessert.jpg"
+        }
+    ]
+}

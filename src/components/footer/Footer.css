@@ -1,0 +1,38 @@
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #edefee;
+    padding: 1rem;
+    align-items: center;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    text-transform: uppercase;
+}
+
+.footer-links .nav-link {
+    margin: 0.3rem 0;
+    font-size: 0.8rem;
+}
+
+footer img {
+    width: 70%;
+}
+
+@media only screen and (min-width: 768px) {
+    footer {
+        padding: 1.5rem 2rem;
+    }
+
+    footer img {
+        width: 30%;
+    }
+
+    .footer-links .nav-link {
+        font-size: 0.9rem;
+    }
+
+}
