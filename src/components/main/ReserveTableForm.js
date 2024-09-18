@@ -1,13 +1,6 @@
-import { useForm } from 'react-hook-form';
 import './ReserveTableForm.css';
 
-export const ReserveTableForm = ({defaultBookingDate, availableTimes, setAvailableTimes, onFormSubmit}) => {
-
-    const form = useForm({
-        mode: 'onBlur'
-    });
-    const {register, formState, handleSubmit} = form;
-    const {errors} = formState;
+export const ReserveTableForm = ({defaultBookingDate, availableTimes, setAvailableTimes, onFormSubmit, register, errors, handleSubmit}) => {
 
     return (
         <>
