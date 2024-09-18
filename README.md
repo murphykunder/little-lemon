@@ -1,6 +1,7 @@
 # Little Lemon Restuarant
 
 This is a react project built as part of training course. 
+Node version: v20.14.0
 
 ## Steps to start the project
 1. Download the project on your local
