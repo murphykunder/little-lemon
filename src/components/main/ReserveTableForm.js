@@ -1,56 +1,36 @@
 import { useForm } from 'react-hook-form';
 import './ReserveTableForm.css';
-import { useReducer, useState } from 'react';
-import { ModalDailog } from '../common/ModalDailog';
-import { getDateAsString } from '../common/Utils';
-import { fetchAPI, submitAPI } from '../api/Api';
 
-const updateAvailableTimes = (state, data) => {
-    state = fetchAPI(new Date(data));
-    return state;
-}
-
-export const ReserveTableForm = () => {
+export const ReserveTableForm = ({defaultBookingDate, availableTimes, setAvailableTimes, onFormSubmit}) => {
 
     const form = useForm({
         mode: 'onBlur'
     });
-
-    const currentDate = new Date();
-    const [modalShow, setModalShow] = useState(false);
-    const initializeTimes = fetchAPI(currentDate);
-    const [availableTimes, dispatch] = useReducer(updateAvailableTimes, initializeTimes);
     const {register, formState, handleSubmit} = form;
     const {errors} = formState;
-    const reserveTableSuccessMessage = "Your have successfully submitted your request. You will receive a mail shortly from the restaurant once your reservation is confirmed.";
-
-    const onReserveTableFormSubmit = (formData) => {
-        submitAPI(formData);
-        setModalShow(true);
-    }
 
     return (
         <>
             <div className='reserve-table-container'>
-                <form onSubmit={handleSubmit(onReserveTableFormSubmit)} className='reserve-table-form' noValidate>
-                    <h6>Booking Form</h6>
+                <form onSubmit={handleSubmit(onFormSubmit)} className='reserve-table-form' noValidate>
+                    <h6>Reserve table</h6>
                     <div className='date-time-form-group'>
                         <div className='form-group'>
                             <label className='form-label' htmlFor='bookingDate' required>Date</label>
-                            <input className='form-control' type='date' id="bookingDate" min={getDateAsString(currentDate)} defaultValue={getDateAsString(currentDate)}
+                            <input className='form-control' type='date' data-testid="bookingDate" id="bookingDate" min={defaultBookingDate} defaultValue={defaultBookingDate}
                                 {...register('bookingDate', {
                                     required: 'Date is required',
                                     onChange: (e) => {
-                                        dispatch(e.target.value)
+                                        setAvailableTimes(e.target.value)
                                     }
                                 }
                             )}
                             />
-                            {errors.bookingDate && <p className='reserve-table-form-error'>{errors.bookingDate.message}</p>}
+                            {errors.bookingDate && <p data-testid="bookingDateError" className='reserve-table-form-error'>{errors.bookingDate.message}</p>}
                         </div>
                         <div className='form-group'>
                             <label className='form-label' htmlFor='bookingTime' required>Time</label>
-                            <select className="form-select" aria-label="Select Booking time" id="bookingTime" defaultValue={''} 
+                            <select className="form-select" aria-label="Select Booking time" data-testid="bookingTime" id="bookingTime" defaultValue={''} 
                                 {...register('bookingTime', {
                                     required: "Time is required"
                                 })}
@@ -65,12 +45,12 @@ export const ReserveTableForm = () => {
                                     })
                                 }
                             </select>
-                            {errors.bookingTime && <p className='reserve-table-form-error'>{errors.bookingTime.message}</p>}
+                            {errors.bookingTime && <p data-testid="bookingTimeError" className='reserve-table-form-error'>{errors.bookingTime.message}</p>}
                         </div>
                     </div>
                     <div className='form-group'>
                         <label className='form-label' htmlFor='numberOfGuests' required>Number of Guests</label>
-                        <input className='form-control' type='number' id="numberOfGuests" min={1} max={10} defaultValue={1}
+                        <input className='form-control' type='number' data-testid="numberOfGuests" id="numberOfGuests" min={1} max={10} defaultValue={1}
                                 {...register('numberOfGuests', {
                                     required: 'Number of Guests is required',
                                     min: {
@@ -83,7 +63,7 @@ export const ReserveTableForm = () => {
                                     }
                                 })}
                         />
-                        {errors.numberOfGuests && <p className='reserve-table-form-error'>{errors.numberOfGuests.message}</p>}
+                        {errors.numberOfGuests && <p data-testid="numberOfGuestsError" className='reserve-table-form-error'>{errors.numberOfGuests.message}</p>}
                     </div>
                     <div className='form-group'>
                         <label className='form-label' htmlFor='occasion'>Occasion</label>
@@ -96,7 +76,7 @@ export const ReserveTableForm = () => {
                     </div>
                     <div className='form-group'>
                         <label className='form-label' htmlFor='fullName' required>Full name</label>
-                        <input className='form-control' type='text' id="fullName"
+                        <input className='form-control' type='text' id="fullName" data-testid="fullName"
                                 {...register('fullName', {
                                     required: 'Full name is required',
                                     minLength: {
@@ -105,11 +85,11 @@ export const ReserveTableForm = () => {
                                     }
                                 })}
                         />
-                        {errors.fullName && <p className='reserve-table-form-error'>{errors.fullName.message}</p>}
+                        {errors.fullName && <p data-testid="fullNameError" className='reserve-table-form-error'>{errors.fullName.message}</p>}
                     </div>
                     <div className='form-group'>
                         <label className='form-label' htmlFor='emailAddress' required>Email Address</label>
-                        <input className='form-control' type='email' id="emailAddress"
+                        <input className='form-control' type='email' id="emailAddress" data-testid="emailAddress"
                                 {...register('emailAddress', {
                                     required: 'Email address is required',
                                     pattern: {
@@ -118,7 +98,7 @@ export const ReserveTableForm = () => {
                                     }
                                 })}
                         />
-                        {errors.emailAddress && <p className='reserve-table-form-error'>{errors.emailAddress.message}</p>}
+                        {errors.emailAddress && <p data-testid="emailAddressError" className='reserve-table-form-error'>{errors.emailAddress.message}</p>}
                     </div>
                     <div className='form-group'>
                         <label className='form-label' htmlFor='phoneNumber'>Phone Number</label>
@@ -129,12 +109,11 @@ export const ReserveTableForm = () => {
                         <textarea className='form-control' id="specialRequest" {...register('specialRequest')}/>
                     </div>
                     <div className="reserve-table-button-group">
-                        <button className='btn' id="reserveTableCancelButton">Cancel</button>
-                        <button className='btn' id="reserveTableSubmitButton">Reserve table</button>
+                        <button className='btn' id="reserveTableCancelButton" data-testid="cancelButton">Cancel</button>
+                        <button className='btn' id="reserveTableSubmitButton" data-testid="submitButton">Reserve</button>
                     </div>
                 </form>
             </div>
-            <ModalDailog show={modalShow} handleClose={() => {setModalShow(false)}} message={reserveTableSuccessMessage} />
         </>
     )
 }
