@@ -1,11 +1,10 @@
 import './Testimonials.css';
-import testimonials from '../../data/json/testimonials.json';
-import { Carousel } from './Carousel';
+import { TestimonialCarousel } from '../testimonial/TestimonialCarousel';
 
 export const Testimonials = () => {
     return (
         <section className='m-5'>
-            <Carousel testimonials={testimonials} />
+            <TestimonialCarousel />
         </section>
     );
 }
